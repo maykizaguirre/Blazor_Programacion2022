@@ -60,12 +60,12 @@ public class LoginController : Controller
             }
             else
             {
-                return LocalRedirect("/login/Datos de usuario Invalido");
+                return LocalRedirect("/login/Datos de usuario Inválido");
             }
         }
         catch (Exception ex)
         {
-            return LocalRedirect("/login/Datos de usuario Invalido");
+            return LocalRedirect("/login/Datos de usuario Inválido");
         }
         return LocalRedirect("/");
     }
