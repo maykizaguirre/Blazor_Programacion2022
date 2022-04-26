@@ -1,0 +1,46 @@
+﻿@page "/Usuarios"
+
+<h3>Lista de Usuarios</h3>
+
+<div class"form-group row">
+    
+</div>
+
+@if (usuariosLista == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Nombre</th>
+                <th>Rol</th>
+                <th>Esta Activo</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in usuariosLista)
+            {
+                <tr>
+                    <td>@user.Codigo</td>
+                    <td>@user.Nombre</td>
+                    <td>@user.Rol</td>
+                    <td>
+                        @if(@user.EstaActivo)
+                        {
+                            <span class="oi oi-circle-check" style="color:green;"></span>
+                        }
+                        else
+                        {
+                            <span class="oi oi-circle-x" style="color:red;"></span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
